@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: 'https://github.com/MrKainn/Appscrip-Assignment-Kain.git'
     targetRevision: HEAD
-    path: nginx-deployment
+    path: manifests/
 
   destination:
     server: 'https://kubernetes.default.svc'
