@@ -12,6 +12,20 @@ Verify Installation
 ```
 terraform -v
 ```
+### Install AWS CLI
+```
+sudo apt-get install python3-pip
+sudo pip install awscli
+```
+Verify Installation
+```
+aws --version
+```
+Configure AWS Console
+```
+aws configure
+```
+
 ### Execute Terraform Configurations:
 Step into project directory
 ```
