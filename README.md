@@ -1,20 +1,15 @@
 # Appscrip-Assignment
 This project provisions an Amazon EKS cluster using Terraform, deploys an NGINX web application via Kubernetes manifests, manages deployments using Argo CD (GitOps), and optionally exposes the app via Ingress and a custom domain.
-## 1. Setup Terraform & AWS CLI
-### Install Terraform
+## Install all Services required
+Change the working directory to terraform/Scripts
 ```
-# change directory to terraform/
-cd terraform
-chmod +x install-terraform.sh
-./install-terraform.sh
+#make permissionex.sh file to executable
+chmod +x permissionex.sh
 ```
-Verify Installation
-```
-terraform -v
-```
+Now Install each Service one by one,
+
 ### Install AWS CLI
 ```
-chmod +x aws-cli.sh
 ./aws-cli.sh
 ```
 Verify Installation
@@ -26,12 +21,26 @@ Configure AWS Console
 aws configure
 #Enter details of your AWS instance
 ```
-
+### Install Terraform
+```
+./terraform.sh
+```
+Verify Installation
+```
+terraform -v
+```
+### Install Kubernetes & EKS 
+```
+./kubectl.sh
+./eksctl.sh
+```
+Now, change directory back to terraform/
+```
+cd ..
+```
 ### Execute Terraform Configurations:
-Step into project directory
-```
-cd terraform
-```
+Check or Step into project directory,
+
 Initialize Terraform modules
 ```
 terraform init
@@ -47,7 +56,7 @@ terraform apply --auto-approve
 ### Access your EKS cluster:
 Update kubeconfig
 ```
-aws eks --region us-east-1 update-kubeconfig --name eks-cluster
+aws eks --region ap-south-1 update-kubeconfig --name eks-cluster
 ```
 Verify cluster access
 ```
