@@ -3,10 +3,10 @@ This project provisions an Amazon EKS cluster using Terraform, deploys an NGINX 
 ## 1. Setup Terraform & AWS CLI
 ### Install Terraform
 ```
-# Linux & macOS
-curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-sudo apt-get update && sudo apt-get install terraform
+# change directory to terraform/
+cd terraform
+chmod +x install-terraform.sh
+./install-terraform.sh
 ```
 Verify Installation
 ```
@@ -14,8 +14,8 @@ terraform -v
 ```
 ### Install AWS CLI
 ```
-sudo apt-get install python3-pip
-sudo pip install awscli
+chmod +x aws-cli.sh
+./aws-cli.sh
 ```
 Verify Installation
 ```
@@ -24,6 +24,7 @@ aws --version
 Configure AWS Console
 ```
 aws configure
+#Enter details of your AWS instance
 ```
 
 ### Execute Terraform Configurations:
